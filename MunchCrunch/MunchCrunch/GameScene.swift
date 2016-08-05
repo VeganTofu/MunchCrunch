@@ -45,6 +45,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
   var borderBody:SKSpriteNode!
   var middleSprite:SKSpriteNode!
   var simpleUpdateCount = 0
+  var selectedDirection:SpriteDirection?
   
   
   override func didMoveToView(view: SKView) {
@@ -58,6 +59,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     self.physicsWorld.contactDelegate = self
     
     generateMiddleSprite()
+    selectedDirection = SpriteDirection.middle
   }
   
   func changeSpriteDirection(spriteDirection:SpriteDirection){
@@ -77,12 +79,10 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     middleSprite.physicsBody = SKPhysicsBody(rectangleOfSize: middleSprite.size)
     middleSprite.physicsBody?.affectedByGravity = false
     middleSprite.physicsBody?.dynamic = false
-    
     middleSprite.physicsBody?.categoryBitMask = CollisionCategoryType.middleSpriteCategory.rawValue
     middleSprite.physicsBody?.contactTestBitMask = CollisionCategoryType.ballCategory.rawValue
     middleSprite.physicsBody?.collisionBitMask = CollisionCategoryType.ballCategory.rawValue
-    
-    middleSprite.position = CGPoint(x: view!.bounds.size.width/2.0, y:view!.bounds.size.height / 2.0)
+    middleSprite.position = CGPoint(x: view!.bounds.size.width/2.0, y: 100)
     self.addChild(middleSprite)
   }
   
@@ -96,10 +96,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     ball.name = "Ball"
     self.addChild(ball)
     applyImpulseAtAngle(BallDirection(rawValue: Int(arc4random()%3))!, ball: ball)
-  }
-  
-  func removeBall(){
-    
   }
   
   func applyImpulseAtAngle(directionType:BallDirection, ball:Ball){

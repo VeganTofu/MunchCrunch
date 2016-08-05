@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3A8468E21D549C5200D105F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8468E11D549C5200D105F9 /* AppDelegate.swift */; };
-		3A8468E41D549C5200D105F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8468E31D549C5200D105F9 /* ViewController.swift */; };
 		3A8468E71D549C5200D105F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8468E51D549C5200D105F9 /* Main.storyboard */; };
 		3A8468E91D549C5200D105F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8468E81D549C5200D105F9 /* Assets.xcassets */; };
 		3A8468EC1D549C5200D105F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8468EA1D549C5200D105F9 /* LaunchScreen.storyboard */; };
 		3A8468F71D549C5200D105F9 /* MunchCrunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8468F61D549C5200D105F9 /* MunchCrunchTests.swift */; };
 		3A8469021D549C5200D105F9 /* MunchCrunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8469011D549C5200D105F9 /* MunchCrunchUITests.swift */; };
+		3A8469101D549CB300D105F9 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A84690F1D549CB300D105F9 /* SpriteKit.framework */; };
+		3A8469121D549E4D00D105F9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8469111D549E4D00D105F9 /* MainViewController.swift */; };
+		3A8469141D54AA2400D105F9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8469131D54AA2400D105F9 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		3A8468DE1D549C5200D105F9 /* MunchCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MunchCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8468E11D549C5200D105F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A8468E31D549C5200D105F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A8468E61D549C5200D105F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A8468E81D549C5200D105F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A8468EB1D549C5200D105F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		3A8468FD1D549C5200D105F9 /* MunchCrunchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MunchCrunchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8469011D549C5200D105F9 /* MunchCrunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunchCrunchUITests.swift; sourceTree = "<group>"; };
 		3A8469031D549C5200D105F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A84690F1D549CB300D105F9 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		3A8469111D549E4D00D105F9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Controllers/MainViewController.swift; sourceTree = "<group>"; };
+		3A8469131D54AA2400D105F9 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8469101D549CB300D105F9 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,7 @@
 		3A8468D51D549C5200D105F9 = {
 			isa = PBXGroup;
 			children = (
+				3A84690F1D549CB300D105F9 /* SpriteKit.framework */,
 				3A8468E01D549C5200D105F9 /* MunchCrunch */,
 				3A8468F51D549C5200D105F9 /* MunchCrunchTests */,
 				3A8469001D549C5200D105F9 /* MunchCrunchUITests */,
@@ -98,11 +104,12 @@
 			isa = PBXGroup;
 			children = (
 				3A8468E11D549C5200D105F9 /* AppDelegate.swift */,
-				3A8468E31D549C5200D105F9 /* ViewController.swift */,
+				3A8469111D549E4D00D105F9 /* MainViewController.swift */,
 				3A8468E51D549C5200D105F9 /* Main.storyboard */,
 				3A8468E81D549C5200D105F9 /* Assets.xcassets */,
 				3A8468EA1D549C5200D105F9 /* LaunchScreen.storyboard */,
 				3A8468ED1D549C5200D105F9 /* Info.plist */,
+				3A8469131D54AA2400D105F9 /* GameScene.swift */,
 			);
 			path = MunchCrunch;
 			sourceTree = "<group>";
@@ -256,8 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A8468E41D549C5200D105F9 /* ViewController.swift in Sources */,
+				3A8469141D54AA2400D105F9 /* GameScene.swift in Sources */,
 				3A8468E21D549C5200D105F9 /* AppDelegate.swift in Sources */,
+				3A8469121D549E4D00D105F9 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
